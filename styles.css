@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#new-task{
+    width: 400px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+#add-task{
+    font-size: 20px;
+    padding: 10px;
+}
+
+li {
+    justify-content: space-between;
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.edit, .delete{
+    margin-top: -5px;
+    margin-left: 5px;
+    font-size: 20px;
+    width: 200px;
+    padding: 10px;
+    float: right;
+    border: none;
+    background: none;
+    border-radius: 10px;
+}
+
+.completion{
+    display: none;
+}
+
+
+.delete{
+    background: rgb(208, 0, 62);
+    color: white;
+}
+.edit{
+    background: rgb(17, 208, 0);
+    color: white;
+}
