@@ -1,9 +1,10 @@
 body {
     font-family: Arial, sans-serif;
+  
 }
 
-.container {
-    width: 100%;
+.todoContainer   {
+    width: 50%;
     margin: 0 auto;
     text-align: center;
 }
@@ -15,34 +16,70 @@ ul {
 
 #new-task{
     width: 400px;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 #add-task{
-    font-size: 20px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 8px;
+    border: none;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
-li {
+#add-task:hover{
+    background: white;
+    color: black;
+}
+
+#task-list{
+    margin-left: 13%;
+    
+    margin-top: 20px;
+}
+
+#task-list li {
+    width: 90%;
+    margin-left: 20%;
     justify-content: space-between;
     padding: 8px;
     margin: 5px 0;
-    background-color: #f9f9f9;
+    background-color: transparent;
     border: 1px solid #ddd;
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
     font-size: 30px;
+    border-radius: 10px; 
+    transition: all 0.5s ease-in-out;
 }
 
-li.completed {
+#task-list li.completed {
     text-decoration: line-through;
     color: #888;
 }
 
 .edit, .delete{
-    margin-top: -5px;
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 15px;
     width: 200px;
     padding: 10px;
     float: right;
@@ -55,12 +92,52 @@ li.completed {
     display: none;
 }
 
-
 .delete{
-    background: rgb(208, 0, 62);
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    transition: all 0.5s ease-in-out;
+    font-weight: 700;
+}
+
+.delete:hover{
+    background: red;
+    border: 2px solid red;
+    /* border: 2px solid rgb(255, 255, 255); */
+}
+
+.edit{
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    transition: all 0.5s ease-in-out;
+    font-weight: 700;
+}
+
+.edit:hover{
+    background: darkgreen;
+    border: 2px solid darkgreen;
+}
+
+
+.alert {
+    width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+footer ul li a.nav-link{
     color: white;
 }
-.edit{
-    background: rgb(17, 208, 0);
+
+form input.searchXT::placeholder{
     color: white;
+}
+
+
+.hero{
+    display: f;
 }

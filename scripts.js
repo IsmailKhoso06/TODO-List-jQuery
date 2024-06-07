@@ -2,30 +2,38 @@ $(document).ready(function(){
     $('#add-task').on('click', function(){
         var newTask = $('#new-task').val();
         if(newTask){
-            $("#task-list").append('<li>' + newTask + '<button class="edit">Edit</button> <button class="delete">Delete</button>  </li> <p class="para">If you have completed (' + $('#new-task').val() + ') task, then click on it to make it completed </p>' );
+            $("#task-list").append('<li>' + newTask + '<button class="edit">Edit</button> <button class="delete">Delete</button></li>');
             $('#new-task').val('');
         }
     });
 
     $('#task-list').on('click', 'li' , function(){
         $(this).toggleClass("completed");
-        $(".para").toggleClass('completion')
     });
 
     $('#task-list').on('click', ".delete", function(e){
         e.stopPropagation();
         $(this).parent().remove();
-        $('.para').remove();
+        var editTask = $(this).parent().text().replace("Edit Delete", '').trim();
+        showAlert(`You have deleted ${editTask} from your Tasks`);
     });
 
-    $('#task-list').on("click", '.edit' , function(){
-        var editTask = $(this).parent().text().replace("EditDelete", '');
+    $('#task-list').on("click", '.edit' , function(e){
+        e.stopPropagation();
+        var editTask = $(this).parent().text().replace("Edit Delete", '').trim();
         var editedTask = prompt('Replace Task With:', editTask);
         if(editedTask){
-            $(this).parent().contents().first()[0].textcontent = editedTask;
+            listItem.contents().first().replaceWith(editedTask);
         }
-
+        alert(`Your task is now updated as ${editedTask}`);
     });
 
-
+    function showAlert(message){
+        var alertText = '<div class="alert" role="alert">' + message + '</div>' ;
+        $("#alert-container").html(alertText);
+        setTimeout(function(){
+            $('#alert-container').html('');
+        }, 3000);
+    }
+    
 });
